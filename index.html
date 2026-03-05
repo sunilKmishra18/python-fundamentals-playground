@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python Basics Micro-App</title>
 
+<style>
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+margin:0;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:#333;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:12px;
+width:600px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+color:#2575fc;
+}
+
+.section{
+margin-top:20px;
+}
+
+button{
+background:#2575fc;
+color:white;
+border:none;
+padding:10px 20px;
+margin-top:10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5ad9;
+}
+
+.quiz-question{
+margin-top:15px;
+}
+
+.result{
+font-weight:bold;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🐍 Learn Python Basics</h1>
+
+<div class="section">
+<h2>Quick Explanation</h2>
+
+<p><b>Python</b> is a beginner-friendly programming language used for AI, data science, automation, and web apps.</p>
+
+<p><b>Example 1 – Print text</b></p>
+<pre>print("Hello World")</pre>
+
+<p><b>Example 2 – Variables</b></p>
+<pre>
+name = "Sunil"
+print(name)
+</pre>
+
+<p><b>Example 3 – Simple Math</b></p>
+<pre>
+x = 5
+y = 3
+print(x + y)
+</pre>
+
+</div>
+
+<div class="section">
+
+<h2>🎯 Quick Quiz</h2>
+
+<div class="quiz-question">
+1. Which function prints output in Python?<br>
+<input type="radio" name="q1" value="a"> show()<br>
+<input type="radio" name="q1" value="b"> print()<br>
+<input type="radio" name="q1" value="c"> echo()<br>
+</div>
+
+<div class="quiz-question">
+2. Which symbol is used for assignment?<br>
+<input type="radio" name="q2" value="a"> = <br>
+<input type="radio" name="q2" value="b"> == <br>
+<input type="radio" name="q2" value="c"> : <br>
+</div>
+
+<div class="quiz-question">
+3. What will this print? <br>
+<pre>x = 4
+y = 2
+print(x + y)</pre>
+
+<input type="radio" name="q3" value="a"> 6 <br>
+<input type="radio" name="q3" value="b"> 8 <br>
+<input type="radio" name="q3" value="c"> 2 <br>
+</div>
+
+<button onclick="checkQuiz()">Submit Quiz</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+let score = 0;
+
+if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+if(document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+if(document.querySelector('input[name="q3"]:checked')?.value === "a") score++;
+
+document.getElementById("result").innerHTML =
+"Your Score: " + score + " / 3";
+
+}
+
+</script>
+
+</body>
+</html>
